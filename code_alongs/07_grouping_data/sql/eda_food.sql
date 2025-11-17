@@ -1,0 +1,12 @@
+FROM food; 
+
+SELECT DISTINCT id FROM food; 
+
+-- 201 DISTINCT ITEMS 
+SELECT COUNT(DISTINCT id) FROM food; 
+
+SELECT COUNT(*) as number_rows FROM food;
+
+DESC food;
+
+SELECT * FROM food WHERE week_id BETWEEN "2004-04" AND "2004-06"
