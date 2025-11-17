@@ -1,7 +1,7 @@
 SELECT
     COUNT(*)
 FROM
-    data_jobs
+    main.data_jobs
 WHERE
 	salary_in_usd < 50000 ;
 
