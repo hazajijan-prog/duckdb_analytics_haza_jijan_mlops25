@@ -18,24 +18,24 @@ FROM
 -- replace 2 more spaces with 1 space 
 SELECT
     description, 
-    replace(description, '  ', ' ') as cleaned_description
+    replace(TRIM(description), '  ', ' ') as cleaned_description
     FROM staging.sql_glossary; 
 
 
 -- concatenate string 
 SELECT
-    concat(upper(trim(sql_word, ' ')) 'command') as sql.command,
-
+    concat(upper(trim(sql_word, ' ')), ' command') AS "sql.command"
 FROM
-    staging.sql_glossary; 
+    staging.sql_glossary;
+
 
 -- extract substrings
 SELECT 
-	trim(sql_word), as trimmed_word,
-	substring(trim(sql_word), 1, 5) as first_fice_chars, 
-    trimmed_word[1:5] as sliced_five_chars,
+    trim(sql_word) AS trimmed_word,
+    substring(trim(sql_word), 1, 5) AS first_five_chars,
+    substring(trim(sql_word), 1, 5) AS sliced_five_chars
+FROM staging.sql_glossary;
 
-FROM staging.sql_glossary
 
 -- reverse characters
 SELECT 
